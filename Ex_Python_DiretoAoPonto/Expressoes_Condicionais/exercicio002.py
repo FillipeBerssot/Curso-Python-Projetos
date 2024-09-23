@@ -1,4 +1,4 @@
-# Escreva um programa que verifique se um numero inserido pelo usuario é par ou ímpar:
+# Ex.002 - Escreva um programa que verifique se um numero inserido pelo usuario é par ou ímpar:
 
 def par_ou_impar(numero):
     if numero % 2 == 0:
