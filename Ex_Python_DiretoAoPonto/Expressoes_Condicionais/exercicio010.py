@@ -8,6 +8,7 @@
 import json
 import re
 
+
 def validar_json_email_telefone(json_string):
  
     try:
