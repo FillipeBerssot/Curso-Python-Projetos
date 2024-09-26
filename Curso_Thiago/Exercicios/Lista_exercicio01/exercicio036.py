@@ -3,7 +3,6 @@
 #   O programa deve falar qual será a durabilidade do vídeo para cada tempo de aceleração.
 #    Exemplo: se um video dura 1h , na velocidade 2 ele ira durar 30 min:
 
-
 def duracao_do_video_acelerado(tempo_do_video, opcao_de_velocidade_do_video):
     partes = tempo_do_video.split(':')
     horas = int(partes[0])
@@ -22,10 +21,14 @@ def duracao_do_video_acelerado(tempo_do_video, opcao_de_velocidade_do_video):
 
     velocidade = velocidades[opcao_de_velocidade_do_video]
     duracao_do_video_acelerado = tempo_em_minutos / velocidade
-    print(f'\nNa velocidade {velocidade}. A duração do vídeo será de {duracao_do_video_acelerado:.2f} minutos.')
+
+    horas_aceleradas = int(duracao_do_video_acelerado // 60)
+    minutos_acelerados = int(duracao_do_video_acelerado % 60)
+
+    print(f'\nNa velocidade {velocidade}x. A duração do vídeo será de aproximadamente {horas_aceleradas} horas e {minutos_acelerados} minutos.')
 
 
-tempo_do_video = input('Digite aqui o tempo de video do youtube que voçê irá assitir (00:00): ')
+tempo_do_video = input('Digite aqui o tempo de video do youtube que voçê irá assitir (HH:MM): ')
 
 opcoes = """
 Escolha a velocidade do vídeo:
