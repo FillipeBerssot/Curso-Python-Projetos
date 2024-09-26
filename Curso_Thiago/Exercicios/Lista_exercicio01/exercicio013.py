@@ -6,7 +6,7 @@
 # ...
 # 5 X 10 = 50
 
-'''numero = int(input("Digite aqui um numero inteiro aleatorio: "))
+"""numero = int(input("Digite aqui um numero inteiro aleatorio: "))
 
 numero_tabuada1 = numero * 1
 numero_tabuada2 = numero * 2
@@ -28,7 +28,7 @@ print(f"A tabuada do numero {numero} é: {numero} x 6 = {numero_tabuada6}")
 print(f"A tabuada do numero {numero} é: {numero} x 7 = {numero_tabuada7}")
 print(f"A tabuada do numero {numero} é: {numero} x 8 = {numero_tabuada8}")
 print(f"A tabuada do numero {numero} é: {numero} x 9 = {numero_tabuada9}")
-print(f"A tabuada do numero {numero} é: {numero} x 10 = {numero_tabuada10}")'''
+print(f"A tabuada do numero {numero} é: {numero} x 10 = {numero_tabuada10}")"""
 
 numero = int(input('Digite aqui um numero de 1 a 10: '))
 
@@ -39,4 +39,3 @@ while numero > 10:
 for multiplicacao in range(1, 11):
     resultado = numero * multiplicacao
     print(f'{numero} x {multiplicacao} = {resultado}')
-

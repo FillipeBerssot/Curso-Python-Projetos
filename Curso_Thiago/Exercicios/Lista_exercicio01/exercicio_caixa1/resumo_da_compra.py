@@ -3,12 +3,12 @@ def resumo_da_compra(carrinho, quantidades, configuracoes):
     total_com_desconto = 0
     total_com_tributo = 0
 
-    print("\nResumo da Compra:")
+    print('\nResumo da Compra:')
 
     for item in carrinho:
-        codigo_de_barras = item["codigo_de_barras"]
-        nome = item["nome"]
-        preco = item["preco"]
+        codigo_de_barras = item['codigo_de_barras']
+        nome = item['nome']
+        preco = item['preco']
         quantidade = quantidades[codigo_de_barras]
 
         if quantidade >= 10:
@@ -27,20 +27,24 @@ def resumo_da_compra(carrinho, quantidades, configuracoes):
         total += valor_total
         total_com_desconto += valor_final
 
-    total_com_tributo = total_com_desconto * configuracoes["taxa_tributo"]
+    total_com_tributo = total_com_desconto * configuracoes['taxa_tributo']
 
-    print(f"Total da compra (sem os descontos e tributos): R$ {total / 100:.2f}")
-    print(f"Total da compra com os descontos: R$ {total_com_desconto / 100:.2f}")
     print(
-        f"Total da compra com o desconto e os tributos (15.17%): R$ {total_com_tributo / 100:.2f}"
+        f'Total da compra (sem os descontos e tributos): R$ {total / 100:.2f}'
+    )
+    print(
+        f'Total da compra com os descontos: R$ {total_com_desconto / 100:.2f}'
+    )
+    print(
+        f'Total da compra com o desconto e os tributos (15.17%): R$ {total_com_tributo / 100:.2f}'
     )
 
     total_com_tributo = total_com_tributo / 100
 
     dados = {
-        "total": total,
-        "total_com_desconto": total_com_desconto,
-        "total_com_tributo": total_com_tributo,
+        'total': total,
+        'total_com_desconto': total_com_desconto,
+        'total_com_tributo': total_com_tributo,
     }
 
     return dados

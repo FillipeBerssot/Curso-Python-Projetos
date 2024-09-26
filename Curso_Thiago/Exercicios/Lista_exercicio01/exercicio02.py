@@ -9,6 +9,5 @@ senha = input('Digite agora a sua senha: ')
 while senha == nome_usuario:
     print('A senha não pode ser igual ao nome de usuario. Digite novamente.')
     senha = input('Digite agora a sua senha: ')
-else:
-    print('Cadastro Efetuado Com Sucesso!')
+print('Cadastro Efetuado Com Sucesso!')
 print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')

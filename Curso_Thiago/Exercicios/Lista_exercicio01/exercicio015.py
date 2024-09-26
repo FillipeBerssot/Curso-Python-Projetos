@@ -3,4 +3,3 @@
 
 base = int(input('Digite aqui um numero como base: '))
 expoente = int(input('Digite aqui um numero como expoente: '))
-

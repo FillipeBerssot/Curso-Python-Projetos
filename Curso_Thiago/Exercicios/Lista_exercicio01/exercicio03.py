@@ -5,50 +5,58 @@
 # Sexo: 'f' ou 'm';
 # Estado Civil: 's', 'c', 'v', 'd';
 
-print('====================================================================================')
+print(
+    '===================================================================================='
+)
 
 nome = input('Digite o seu nome: ')
-#validação:
+# validação:
 while len(nome) <= 3:
-    print('O Nome inserido é Inválido. Nome deve conter mais do que 3 caracteres.')
+    print(
+        'O Nome inserido é Inválido. Nome deve conter mais do que 3 caracteres.'
+    )
     nome = input('Digite o seu nome novamente: ')
-else:
-    print('O Nome inserido é Válido.')
+print('O Nome inserido é Válido.')
 
-print('====================================================================================')
+print(
+    '===================================================================================='
+)
 
 idade = int(input('Digite a sua idade: '))
-#validaçao:
+# validaçao:
 while idade <= 0 or idade > 150:
     print('A Idade inserida Inválida. Insira uma idade entre 0 e 150.')
-    idade = int(input('Digite a sua idade novamente: ')) 
-else:
-    print('A Idade inserida é Válida.')
+    idade = int(input('Digite a sua idade novamente: '))
+print('A Idade inserida é Válida.')
 
-print('====================================================================================')
+print(
+    '===================================================================================='
+)
 
 salario = float(input('Digite o seu salario atual:'))
-#validação:
+# validação:
 while salario <= 0:
     print('O Salario inserido é Inválido. Salario deve ser maior do que zero.')
     salario = float(input('Digite o seu salario atual novamente: '))
-else:
-    print('Salario inserido é Válido.')
+print('Salario inserido é Válido.')
 
-print('====================================================================================')
+print(
+    '===================================================================================='
+)
 
 print('Digite a opção para o seu genero: ')
 print('[f] para Feminino')
 print('[m] para masculino')
 genero = input(' ')
-#validação:
+# validação:
 while genero != 'f' and genero != 'm':
     print('A Opção inserida é Inválida.')
     genero = input('Digite novamente uma opção entre [f] ou [m]. ')
-else:
-    print('A Opção inserida é Válida.')
+print('A Opção inserida é Válida.')
 
-print('====================================================================================')
+print(
+    '===================================================================================='
+)
 
 print('Digite a opção para o seu Estado Civil: ')
 print('[s] para Solteiro(a)')
@@ -56,14 +64,22 @@ print('[c] para Casado(a)')
 print('[v] para Viúvo(a)')
 print('[d] para Divorciado(a)')
 estado_civil = input(' ')
-#validaçao:
-while estado_civil != 's' and estado_civil != 'c' and estado_civil != 'v' and estado_civil != 'd':
+# validaçao:
+while (
+    estado_civil != 's'
+    and estado_civil != 'c'
+    and estado_civil != 'v'
+    and estado_civil != 'd'
+):
     print('A Opção inserida é Inválida.')
-    estado_civil = input('Digite novamente uma opção entre [s], [c], [v], [d]. ')
-else:
-    print('A Opção inserida é Válida.')
+    estado_civil = input(
+        'Digite novamente uma opção entre [s], [c], [v], [d]. '
+    )
+print('A Opção inserida é Válida.')
 
-print('====================================================================================')
+print(
+    '===================================================================================='
+)
 
 print('De acordo com os valores e opções inseridos:')
 print(f'Seu nome é {nome}.')
@@ -83,4 +99,6 @@ if genero == 'f':
     print('O seu genero é Feminino.')
 elif genero == 'm':
     print('O seu genero é Masculino.')
-print('====================================================================================')
+print(
+    '===================================================================================='
+)

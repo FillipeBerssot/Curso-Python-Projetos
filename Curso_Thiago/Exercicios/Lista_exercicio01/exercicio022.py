@@ -2,22 +2,22 @@
 
 while True:
     while True:
-        num = int(input("digite um numero para obter o fatorial: "))
+        num = int(input('digite um numero para obter o fatorial: '))
         if num <= 16 and num > 0:
-            print("valido")
+            print('valido')
             break
         else:
-            print("numero invalido")
-            num = int(input("digite um numero para obter o fatorial: "))
-    lista = list(range(1, num+1))
+            print('numero invalido')
+            num = int(input('digite um numero para obter o fatorial: '))
+    lista = list(range(1, num + 1))
     produto = 1
     for numero in lista:
         produto = numero * produto
     print(produto)
-    print("deseja fazer a operação novamente? ")
-    print("se sim digite 1")
-    print("se não digite qualquer outra tecla")
-    num1 = input("digite aqui: ")
-    if num1 != "1":
-        print("fechando")
+    print('deseja fazer a operação novamente? ')
+    print('se sim digite 1')
+    print('se não digite qualquer outra tecla')
+    num1 = input('digite aqui: ')
+    if num1 != '1':
+        print('fechando')
         break

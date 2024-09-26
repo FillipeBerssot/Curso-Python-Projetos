@@ -11,4 +11,3 @@ media = (numero1 + numero2 + numero3 + numero4 + numero5) / 5
 
 print(f'A soma dos numero digitados é {soma}')
 print(f'A média dos numeros digitados é {media}')
-

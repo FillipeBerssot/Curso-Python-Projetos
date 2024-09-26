@@ -1,7 +1,9 @@
-# Ex.036- Faça um programa que: 
-#  O usuario vai fornecer o tempo de vídeo do youtube e a velocidade que irá assirtir (1,25 / 1,5 /2,0).
-#   O programa deve falar qual será a durabilidade do vídeo para cada tempo de aceleração.
-#    Exemplo: se um video dura 1h , na velocidade 2 ele ira durar 30 min:
+# Ex.036- Faça um programa que:
+# O usuário vai fornecer o tempo de vídeo do YouTube e a velocidade
+# que irá assistir (1,25 / 1,5 / 2,0).
+# O programa deve falar qual será a durabilidade do vídeo para cada tempo de
+# aceleração:
+# Exemplo: se um vídeo dura 1h, na velocidade 2 ele irá durar 30 min.
 
 def duracao_do_video_acelerado(tempo_do_video, opcao_de_velocidade_do_video):
     partes = tempo_do_video.split(':')
@@ -16,7 +18,7 @@ def duracao_do_video_acelerado(tempo_do_video, opcao_de_velocidade_do_video):
         '4': 1.25,
         '5': 1.5,
         '6': 1.75,
-        '7': 2.0
+        '7': 2.0,
     }
 
     velocidade = velocidades[opcao_de_velocidade_do_video]
@@ -25,10 +27,16 @@ def duracao_do_video_acelerado(tempo_do_video, opcao_de_velocidade_do_video):
     horas_aceleradas = int(duracao_do_video_acelerado // 60)
     minutos_acelerados = int(duracao_do_video_acelerado % 60)
 
-    print(f'\nNa velocidade {velocidade}x. A duração do vídeo será de aproximadamente {horas_aceleradas} horas e {minutos_acelerados} minutos.')
+    print(
+        f'\nNa velocidade {velocidade}x. A duração do vídeo será de '
+        f'aproximadamente {horas_aceleradas} horas '
+        f'e {minutos_acelerados} minutos.'
+    )
 
 
-tempo_do_video = input('Digite aqui o tempo de video do youtube que voçê irá assitir (HH:MM): ')
+tempo_do_video = input(
+    'Digite aqui o tempo de video do youtube que voçê irá assitir (HH:MM): '
+)
 
 opcoes = """
 Escolha a velocidade do vídeo:
@@ -42,11 +50,13 @@ Escolha a velocidade do vídeo:
 """
 
 opcao_de_velocidade_do_video = ''
-while opcao_de_velocidade_do_video not in ['1', '2', '3', '4', '5', '6', '7']:
+while opcao_de_velocidade_do_video not in {'1', '2', '3', '4', '5', '6', '7'}:
     print(opcoes)
-    opcao_de_velocidade_do_video = input('Digite aqui sua opcão de velocidade de acordo com as opções acima: ').strip()
+    opcao_de_velocidade_do_video = input(
+        'Digite aqui sua opcão de velocidade de acordo com as opções acima: '
+    ).strip()
 
-    if opcao_de_velocidade_do_video not in ['1', '2', '3', '4', '5', '6', '7']:
+    if opcao_de_velocidade_do_video not in {'1', '2', '3', '4', '5', '6', '7'}:
         print('Opção inválida. Por favor, escolha uma opção entre 1 e 7.')
 
 duracao_do_video_acelerado(tempo_do_video, opcao_de_velocidade_do_video)

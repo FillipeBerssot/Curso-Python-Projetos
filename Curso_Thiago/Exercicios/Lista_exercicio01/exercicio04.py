@@ -5,4 +5,3 @@ texto = input('Digite aqui um texto qualquer: ')
 tamanho_texto = len(texto)
 
 print(f'O texto digitado tem {tamanho_texto} caracteres.')
-

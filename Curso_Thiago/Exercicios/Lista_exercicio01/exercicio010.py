@@ -3,4 +3,3 @@
 for numero in range(1, 51):
     if numero % 2 != 0:
         print(f'Em uma lista de numeros de 1 a 50, o {numero} é ímpar')
-
