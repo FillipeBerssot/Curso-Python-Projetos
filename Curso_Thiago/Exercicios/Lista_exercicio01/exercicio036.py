@@ -5,11 +5,66 @@
 # aceleração:
 # Exemplo: se um vídeo dura 1h, na velocidade 2 ele irá durar 30 min.
 
-def duracao_do_video_acelerado(tempo_do_video, opcao_de_velocidade_do_video):
-    partes = tempo_do_video.split(':')
-    horas = int(partes[0])
-    minutos = int(partes[1])
-    tempo_em_minutos = horas * 60 + minutos
+numero_partes_tempo = 3
+limite_minutos_segundos = 59
+
+
+def calcular_duracao_acelerada(tempo_em_segundos, velocidade):
+    duracao_acelerada = tempo_em_segundos / velocidade
+
+    horas = int(duracao_acelerada // 3600)
+    minutos = int((duracao_acelerada % 3600) // 60)
+    segundos = int(duracao_acelerada % 60)
+
+    return horas, minutos, segundos
+
+
+def validar_tempo(tempo):
+    partes = tempo.split(':')
+
+    if len(partes) != numero_partes_tempo:
+        print('Erro: O formato deve ser HH:MM:SS.')
+        return False
+
+    if (not partes[0].isdigit() or not partes[1].isdigit() or
+        not partes[2].isdigit()):
+        print('Erro: Horas, minutos e segundos devem ser números inteiros.')
+        return False
+
+    horas, minutos, segundos = map(int, partes)
+
+    if horas < 0:
+        print('Erro: As horas devem ser maiores ou iguais a 0')
+        return False
+
+    if not (0 <= minutos <= limite_minutos_segundos):
+        print(f'Erro: Minutos devem estar entre 0 e '
+              f'{limite_minutos_segundos}.')
+        return False
+    if not (0 <= segundos <= limite_minutos_segundos):
+        print(f'Erro: Segundos devem estar entre 0 e '
+              f'{limite_minutos_segundos}.')
+        return False
+    return True
+
+
+def obter_tempo_em_segundos(tempo):
+    horas, minutos, segundos = map(int, tempo.split(':'))
+    return horas * 3600 + minutos * 60 + segundos
+
+
+def obter_velocidade_do_usuario():
+    opcoes_velocidade = """
+Escolha a velocidade de reprodução:
+[1] - 0.25x
+[2] - 0.5x
+[3] - 0.75x
+[4] - 1.25x
+[5] - 1.5x
+[6] - 1.75x
+[7] - 2.0x
+"""
+    print(opcoes_velocidade)
 
     velocidades = {
         '1': 0.25,
@@ -21,42 +76,28 @@ def duracao_do_video_acelerado(tempo_do_video, opcao_de_velocidade_do_video):
         '7': 2.0,
     }
 
-    velocidade = velocidades[opcao_de_velocidade_do_video]
-    duracao_do_video_acelerado = tempo_em_minutos / velocidade
+    opcao_velocidade = input('Digite sua escolha: ').strip()
+    while opcao_velocidade not in velocidades:
+        print('Opção inválida. Escolha uma opção válida entre 1 e 7.')
+        opcao_velocidade = input('Digite sua escolha: ').strip()
 
-    horas_aceleradas = int(duracao_do_video_acelerado // 60)
-    minutos_acelerados = int(duracao_do_video_acelerado % 60)
-
-    print(
-        f'\nNa velocidade {velocidade}x. A duração do vídeo será de '
-        f'aproximadamente {horas_aceleradas} horas '
-        f'e {minutos_acelerados} minutos.'
-    )
+    return velocidades[opcao_velocidade]
 
 
-tempo_do_video = input(
-    'Digite aqui o tempo de video do youtube que voçê irá assitir (HH:MM): '
+tempo = input('Digite o tempo do vídeo no formato HH:MM:SS: ')
+
+while not validar_tempo(tempo):
+    tempo = input('Digite o tempo de vídeo no formato HH:MM:SS: ')
+
+velocidade = obter_velocidade_do_usuario()
+
+tempo_em_segundos = obter_tempo_em_segundos(tempo)
+
+horas, minutos, segundos = calcular_duracao_acelerada(
+    tempo_em_segundos, velocidade
 )
 
-opcoes = """
-Escolha a velocidade do vídeo:
-[1] para velocidade 0.25
-[2] para velocidade 0.5
-[3] para velocidade 0.75
-[4] para velocidade 1.25
-[5] para velocidade 1.5
-[6] para velocidade 1.75
-[7] para velocidade 2.0
-"""
-
-opcao_de_velocidade_do_video = ''
-while opcao_de_velocidade_do_video not in {'1', '2', '3', '4', '5', '6', '7'}:
-    print(opcoes)
-    opcao_de_velocidade_do_video = input(
-        'Digite aqui sua opcão de velocidade de acordo com as opções acima: '
-    ).strip()
-
-    if opcao_de_velocidade_do_video not in {'1', '2', '3', '4', '5', '6', '7'}:
-        print('Opção inválida. Por favor, escolha uma opção entre 1 e 7.')
-
-duracao_do_video_acelerado(tempo_do_video, opcao_de_velocidade_do_video)
+print(
+    f'\nNa velocidade {velocidade}x, a duração do vídeo será de '
+    f'aproximadamente {horas} horas, {minutos} minutos e {segundos} segundos.'
+)
