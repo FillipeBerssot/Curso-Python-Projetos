@@ -1,6 +1,6 @@
 def calcular_duracao_acelerada(tempo_em_segundos, velocidade):
     """
-    Objetivo: Calcular a nova duração do vídeo com base na 
+    Objetivo: Calcular a nova duração do vídeo com base na
     velocidade escolhida pelo usuario.
 
     Calcula e converte para horas, minutos e segundos.

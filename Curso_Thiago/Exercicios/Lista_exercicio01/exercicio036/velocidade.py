@@ -1,6 +1,6 @@
 def obter_velocidade_do_usuario():
     """
-    Objetivo: Obter a resposta de velocidade do usuario, faz 
+    Objetivo: Obter a resposta de velocidade do usuario, faz
     uma validação da resposta e faz o retorno dessa resposta
     em um valor númerico.
 
@@ -8,7 +8,7 @@ def obter_velocidade_do_usuario():
 
     Realiza a validação dessa opção.
     """
-   
+
     opcoes_velocidade = """
 Escolha a velocidade de reprodução:
 [1] - 0.25x
@@ -28,7 +28,7 @@ Escolha a velocidade de reprodução:
         '4': 1.25,
         '5': 1.5,
         '6': 1.75,
-        '7': 2.0
+        '7': 2.0,
     }
 
     opcao_velocidade = input('Digite sua escolha: ').strip()
