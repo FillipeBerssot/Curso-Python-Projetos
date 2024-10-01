@@ -29,7 +29,7 @@ def app():
     print(
         f'\nNa velocidade {velocidade}x, a duração do vídeo será de '
         f'aproximadamente {horas} horas, {minutos} minutos e {segundos}'
-        f'segundos.'
+        f' segundos.'
     )
 
 
