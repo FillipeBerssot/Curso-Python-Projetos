@@ -9,14 +9,14 @@ class Cidade:
     cidade_media_maxima = 499000
     cidade_grande = 500000
 
-    def __init__(self, nome, populacao, area, localizacao, prefeito, fundacao, pib):
-        self.nome = nome
-        self.populacao = populacao
-        self.area = area
-        self.localizacao = localizacao
-        self. prefeito = prefeito
-        self.fundacao = fundacao
-        self.pib = pib
+    def __init__(self, **kwargs):
+        self.nome = kwargs.get('nome')
+        self.populacao = kwargs.get('populacao')
+        self.area = kwargs.get('area')
+        self.localizacao = kwargs.get('localizacao')
+        self. prefeito = kwargs.get('prefeito')
+        self.fundacao = kwargs.get('fundacao')
+        self.pib = kwargs.get('pib')
 
     def verificar_tipologia_cidade(self):
         if self.populacao <= Cidade.cidade_pequena:

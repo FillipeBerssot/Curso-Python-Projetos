@@ -11,17 +11,17 @@ class Pessoa:
     imc_sobrepeso_maximo = 29.9
     imc_obesidade = 30.0
 
-    def __init__(self, nome, sobrenome, altura, peso, idade, sexo, cpf, endereco, profissao, salario):
-        self.nome = nome
-        self.sobrenome = sobrenome
-        self.altura = altura
-        self.peso = peso
-        self.idade = idade
-        self.sexo = sexo
-        self.cpf = cpf
-        self.endereco = endereco
-        self.profissao = profissao
-        self.salario = salario
+    def __init__(self, *args):
+        self.nome = args[0]
+        self.sobrenome = args[1]
+        self.altura = args[2]
+        self.peso = args[3]
+        self.idade = args[4]
+        self.sexo = args[5]
+        self.cpf = args[6]
+        self.endereco = args[7]
+        self.profissao = args[8]
+        self.salario = args[9]
 
     def nome_completo(self):
         return f'{self.nome} {self.sobrenome}'
@@ -91,42 +91,42 @@ class Pessoa:
         return self.idade >= outra_pessoa.idade 
 
 pessoa_01 = Pessoa(
-    nome = 'Fillipe',
-    sobrenome = 'Berssot',
-    altura = 1.80,
-    peso = 105,
-    idade = 29,
-    sexo = 'Masculino',
-    cpf = '031.784.941-70',
-    endereco = 'Rua Golfo de Bengala, Nº 45, João Pessoa, JP.',
-    profissao = 'Estudante',
-    salario = 0
+    'Fillipe',
+    'Berssot',
+    1.80,
+    105,
+    29,
+    'Masculino',
+    '031.784.941-70',
+    'Rua Golfo de Bengala, Nº 45, João Pessoa, JP.',
+    'Estudante',
+    0
 )
 
 pessoa_02 = Pessoa(
-    nome = 'Thiago',
-    sobrenome = 'Tancredi',
-    altura = 1.80,
-    peso = 90,
-    idade = 30,
-    sexo = 'Indefinido',
-    cpf = '000.000.000-00',
-    endereco = 'Alto da Glória, Nº 100, Goiânia, GO.',
-    profissao = 'Desenvolvedor Senior',
-    salario = 20000,
+    'Thiago',
+    'Tancredi',
+    1.80,
+    90,
+    30,
+    'Indefinido',
+    '000.000.000-00',
+    'Alto da Glória, Nº 100, Goiânia, GO.',
+    'Desenvolvedor Senior',
+    20000,
 )
 
 pessoa_03 = Pessoa(
-    nome = 'Alberdan',
-    sobrenome = 'Fernandes',
-    altura = 1.70,
-    peso = 70,
-    idade = 17,
-    sexo = 'Feminino',
-    cpf = '111.111.111-11',
-    endereco = 'Parque Trindade, Nº 32, Goiânia, GO.',
-    profissao = 'Estudante',
-    salario = 1000
+    'Alberdan',
+    'Fernandes',
+    1.70,
+    70,
+    17,
+    'Feminino',
+    '111.111.111-11',
+    'Parque Trindade, Nº 32, Goiânia, GO.',
+    'Estudante',
+    1000
 )
 
 print(repr(pessoa_01))
