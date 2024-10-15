@@ -14,7 +14,7 @@ class Cidade:
         self.populacao = kwargs.get('populacao')
         self.area = kwargs.get('area')
         self.localizacao = kwargs.get('localizacao')
-        self. prefeito = kwargs.get('prefeito')
+        self.prefeito = kwargs.get('prefeito')
         self.fundacao = kwargs.get('fundacao')
         self.pib = kwargs.get('pib')
 

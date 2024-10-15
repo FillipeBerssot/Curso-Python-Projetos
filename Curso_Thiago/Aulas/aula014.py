@@ -1,7 +1,10 @@
+# Classes e programação orientada a objetos POO:
+
+# Exemplo Classe Carro:
 class Carro:
     marca = 'BMW'
 
-    def _init_(self, cor, nome, valor, modelo, placa, adicionais):
+    def __init__(self, cor, nome, valor, modelo, placa, adicionais):
         self.cor = cor
         self.nome = nome
         self.valor = valor
@@ -111,6 +114,3 @@ print(meu_carro['banco'])
 # Utilizando o _setitem_
 meu_carro['teto_solar'] = 'Adicionei Teto Solar'
 print(meu_carro['teto_solar'])
-
-
-# Eu quero que vcs criem uma classe Pessoa, Cidade e pesquisem como utilizar o getattr e o setattr métodos dunder methods
